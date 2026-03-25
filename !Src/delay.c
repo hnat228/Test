@@ -29,5 +29,6 @@ void Delay_ms(uint32_t ms)
   uint32_t t0 =  DWT->CYCCNT;
   uint32_t us_count_tic =  ms * (SystemCoreClock/1000);
   while (delta(t0, DWT->CYCCNT) < us_count_tic) ;
+  t0 =  DWT->CYCCNT;
 }
 
